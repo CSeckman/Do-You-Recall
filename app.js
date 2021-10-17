@@ -35,4 +35,12 @@ function startGame(evt) {
     startArray = expertArray
     console.log(startArray)
   }
+  getRandomArray()
+}
+
+function getRandomArray() {
+  let randomArray = startArray.map(function (num) {
+    return (Math.floor(Math.random() * 10))
+  })
+  console.log(randomArray)
 }
