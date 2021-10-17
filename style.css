@@ -1,0 +1,40 @@
+header {
+  text-align: center;
+  font-size: 40px ;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+
+
+.allCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+	width: 100%;
+}
+
+.card {
+  margin: 0 20px;
+  align-items: center;
+  padding: 5px;
+}
+
+.card-title {
+  font-size: 15px;
+  text-align: center;
+}
+
+.btn {
+  padding: 0 20% 0 20%;
+  font-size: 10px;
+}
+
+.cardImg {
+  width: 100px;
+  margin-top: 6px;
+}
