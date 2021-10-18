@@ -10,6 +10,7 @@ let startArray
 let randomArrayLength
 let playerGuess
 let playerArray
+let randomArray
 /*------------------------ Cached Element References ------------------------*/
 const begButton = document.querySelector('#beginnerBtn')
 const interButton = document.querySelector('#intermediateBtn')
@@ -20,15 +21,17 @@ const expScreen = document.querySelector('#expertScreen')
 const begInput = document.querySelector('.begForm')
 const interInput = document.querySelector('.interForm')
 const expInput = document.querySelector('.expForm')
+const submitBtn = document.querySelectorAll('.submitBtn')
 const inputVal = document.getElementById('example')
 /*----------------------------- Event Listeners -----------------------------*/
 begButton.addEventListener('click', startGame)
 interButton.addEventListener('click', startGame)
 expButton.addEventListener('click', startGame)
-begInput.addEventListener('click', handleInput)
-interInput.addEventListener('click', handleInput)
-expInput.addEventListener('click', handleInput)
-
+submitBtn.forEach(btn => {
+  btn.addEventListener('click', handleInput)
+})
+// interInput.addEventListener('click', handleInput)
+// expInput.addEventListener('click', handleInput)
 /*-------------------------------- Functions --------------------------------*/
 // init()
 
@@ -56,7 +59,7 @@ function startGame(evt) {
 }
 
 function getRandomArray() {
-  let randomArray = startArray.map(function (num) {
+  randomArray = startArray.map(function (num) {
     return (Math.floor(Math.random() * 10))
   })
   console.log(randomArray)
@@ -104,15 +107,16 @@ function renderInput() {
       expScreen.innerHTML = "<img src= '/images/numbers pic.jpeg\' width=\'100%\'>";
     }, 15000)
   }
-  handleInput()
 }
 
 function handleInput () {
-  playerGuess = inputVal.value
-  console.log(playerGuess)
-  playerArray = playerGuess.split("").map((playerGuess) => {
-    return Number(playerGuess)
-  })
+  console.log('click')
+  playerArray = parseInt(inputVal.value)
   console.log(playerArray)
-  isWinner()
+  // console.log(randomArray.join())
+  // isWinner()
 }
+
+// function isWinner() {
+  
+// }
