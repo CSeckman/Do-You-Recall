@@ -8,6 +8,7 @@ const intermediateArray = [1,1,1,1,1,1,1,1,1,1]
 const expertArray = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 let startArray
 let randomArrayLength
+let playerArray
 /*------------------------ Cached Element References ------------------------*/
 const begButton = document.querySelector('#beginnerBtn')
 const interButton = document.querySelector('#intermediateBtn')
@@ -18,13 +19,14 @@ const expScreen = document.querySelector('#expertScreen')
 const begInput = document.querySelector('.begForm')
 const interInput = document.querySelector('.interForm')
 const expInput = document.querySelector('.expForm')
-const startImage = document.querySelectorAll('.screen')
-
+const inputVal = document.getElementById('example')
 /*----------------------------- Event Listeners -----------------------------*/
 begButton.addEventListener('click', startGame)
 interButton.addEventListener('click', startGame)
 expButton.addEventListener('click', startGame)
-
+begInput.addEventListener('click', handleInput)
+interInput.addEventListener('click', handleInput)
+expInput.addEventListener('click', handleInput)
 
 /*-------------------------------- Functions --------------------------------*/
 // init()
@@ -101,4 +103,11 @@ function renderInput() {
       expScreen.innerHTML = "<img src= '/images/numbers pic.jpeg\' width=\'100%\'>";
     }, 15000)
   }
+  handleInput()
+}
+
+function handleInput () {
+  playerArray = parseInt(inputVal.value)
+  console.log(playerArray)
+  
 }
