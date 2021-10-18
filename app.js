@@ -15,6 +15,10 @@ const expButton = document.querySelector('#expertBtn')
 const begScreen = document.querySelector('#beginnerScreen')
 const interScreen = document.querySelector('#intermediateScreen')
 const expScreen = document.querySelector('#expertScreen')
+const begInput = document.querySelector('.begForm')
+const interInput = document.querySelector('.interForm')
+const expInput = document.querySelector('.expForm')
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 begButton.addEventListener('click', startGame)
@@ -63,4 +67,16 @@ function renderNums (randomArray) {
       console.log(num)
     }, (idx * 1000))
   })
+  // renderInput()
 }
+
+// function renderInput(randomArray) {
+//   if (randomArray.length === 5) {
+//     begButton.setAttribute('hidden', true)
+
+//   } else if (randomArray.length === 10) {
+//     screenToUpdate = interScreen
+//   } else if (randomArray.length === 15) {
+//     screenToUpdate = expScreen
+//   }
+// }
