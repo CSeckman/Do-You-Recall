@@ -10,7 +10,9 @@ h1 {
   margin: 5px 15% 5px 15%;
 }
 
-
+:root {
+  --animate-duration: 2s;
+}
 
 .allCards {
   display: flex;
@@ -43,6 +45,7 @@ h1 {
 
 .cardImg {
   width: 100%;
+  padding: 0px 0px;
 }
 
 .screen {
