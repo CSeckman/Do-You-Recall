@@ -18,7 +18,7 @@ const expScreen = document.querySelector('#expertScreen')
 const begInput = document.querySelector('.begForm')
 const interInput = document.querySelector('.interForm')
 const expInput = document.querySelector('.expForm')
-
+const startImage = document.querySelectorAll('.screen')
 
 /*----------------------------- Event Listeners -----------------------------*/
 begButton.addEventListener('click', startGame)
@@ -84,16 +84,21 @@ function renderInput() {
     begButton.setAttribute('hidden', true)
     setTimeout(() => {
       begInput.removeAttribute('hidden')
+      begScreen.innerHTML = "<img src= '/images/numbers pic.jpeg\' width=\'100%\'>";
     }, 5000)
-  } else if (randomArrayLength === 10) {
+  }
+  if (randomArrayLength === 10) {
     interButton.setAttribute('hidden', true)
     setTimeout(() => {
       interInput.removeAttribute('hidden')
+      interScreen.innerHTML = "<img src= '/images/numbers pic.jpeg\' width=\'100%\'>";
     }, 10000)
-  } else if (randomArrayLength === 15) {
+  }
+  if (randomArrayLength === 15) {
     expButton.setAttribute('hidden', true)
     setTimeout(() => {
       expInput.removeAttribute('hidden')
+      expScreen.innerHTML = "<img src= '/images/numbers pic.jpeg\' width=\'100%\'>";
     }, 15000)
   }
 }
