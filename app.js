@@ -12,7 +12,7 @@ let startArray
 const begButton = document.querySelector('#beginnerBtn')
 const interButton = document.querySelector('#intermediateBtn')
 const expButton = document.querySelector('#expertBtn')
-
+const begScreen = document.querySelector('#beginnerScreen')
 
 /*----------------------------- Event Listeners -----------------------------*/
 begButton.addEventListener('click', startGame)
