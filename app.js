@@ -7,7 +7,7 @@ const beginnerArray = [1,1,1,1,1]
 const intermediateArray = [1,1,1,1,1,1,1,1,1,1]
 const expertArray = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 let startArray
-
+let randomArrayLength
 /*------------------------ Cached Element References ------------------------*/
 const begButton = document.querySelector('#beginnerBtn')
 const interButton = document.querySelector('#intermediateBtn')
@@ -27,6 +27,14 @@ expButton.addEventListener('click', startGame)
 
 
 /*-------------------------------- Functions --------------------------------*/
+// init()
+
+// function init() {
+//   begInput.setAttribute('hidden', true)
+//   interInput.setAttribute('hidden', true)
+//   expInput.setAttribute('hidden', true)
+// }
+
 function startGame(evt) {
   console.log('working click')
   if (evt.target.id === 'beginnerBtn') {
@@ -54,11 +62,12 @@ function getRandomArray() {
 
 function renderNums (randomArray) {
   let screenToUpdate
-  if (randomArray.length === 5) {
+  randomArrayLength = randomArray.length
+  if (randomArrayLength === 5) {
     screenToUpdate = begScreen
-  } else if (randomArray.length === 10) {
+  } else if (randomArrayLength === 10) {
     screenToUpdate = interScreen
-  } else if (randomArray.length === 15) {
+  } else if (randomArrayLength) {
     screenToUpdate = expScreen
   }
   randomArray.forEach((num, idx) => {
@@ -67,16 +76,20 @@ function renderNums (randomArray) {
       console.log(num)
     }, (idx * 1000))
   })
-  // renderInput()
+  renderInput()
 }
 
-// function renderInput(randomArray) {
-//   if (randomArray.length === 5) {
-//     begButton.setAttribute('hidden', true)
-
-//   } else if (randomArray.length === 10) {
-//     screenToUpdate = interScreen
-//   } else if (randomArray.length === 15) {
-//     screenToUpdate = expScreen
-//   }
-// }
+function renderInput() {
+  if (randomArrayLength === 5) {
+    begButton.setAttribute('hidden', true)
+    begInput.removeAttribute('hidden')
+  } else if (randomArrayLength === 10) {
+    interButton.setAttribute('hidden', true)
+    interInput.removeAttribute('hidden')
+    screenToUpdate = interScreen
+  } else if (randomArrayLength === 15) {
+    expButton.setAttribute('hidden', true)
+    expInput.removeAttribute('hidden')
+    screenToUpdate = expScreen
+  }
+}
