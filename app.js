@@ -8,6 +8,7 @@ const intermediateArray = [1,1,1,1,1,1,1,1,1,1]
 const expertArray = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 let startArray
 let randomArrayLength
+let playerGuess
 let playerArray
 /*------------------------ Cached Element References ------------------------*/
 const begButton = document.querySelector('#beginnerBtn')
@@ -107,7 +108,11 @@ function renderInput() {
 }
 
 function handleInput () {
-  playerArray = parseInt(inputVal.value)
+  playerGuess = inputVal.value
+  console.log(playerGuess)
+  playerArray = playerGuess.split("").map((playerGuess) => {
+    return Number(playerGuess)
+  })
   console.log(playerArray)
-  
+  isWinner()
 }
