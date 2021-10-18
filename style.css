@@ -27,7 +27,7 @@ h1 {
   width: 50px;
   margin: 0 20px;
   align-items: center;
-  padding: 5px;
+  
 }
 
 .card-title {
@@ -54,4 +54,9 @@ h1 {
   margin-top: 6px;
   color: red;
   font-size: 75px;
+}
+
+#example {
+  width: 95%;
+  margin: 5px;
 }

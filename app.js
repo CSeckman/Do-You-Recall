@@ -82,14 +82,18 @@ function renderNums (randomArray) {
 function renderInput() {
   if (randomArrayLength === 5) {
     begButton.setAttribute('hidden', true)
-    begInput.removeAttribute('hidden')
+    setTimeout(() => {
+      begInput.removeAttribute('hidden')
+    }, 5000)
   } else if (randomArrayLength === 10) {
     interButton.setAttribute('hidden', true)
-    interInput.removeAttribute('hidden')
-    screenToUpdate = interScreen
+    setTimeout(() => {
+      interInput.removeAttribute('hidden')
+    }, 10000)
   } else if (randomArrayLength === 15) {
     expButton.setAttribute('hidden', true)
-    expInput.removeAttribute('hidden')
-    screenToUpdate = expScreen
+    setTimeout(() => {
+      expInput.removeAttribute('hidden')
+    }, 15000)
   }
 }
