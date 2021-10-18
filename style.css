@@ -22,6 +22,7 @@ h1 {
 }
 
 .card {
+  width: 50px;
   margin: 0 20px;
   align-items: center;
   padding: 5px;
@@ -41,6 +42,13 @@ h1 {
 }
 
 .cardImg {
-  width: 75%;
+  width: 100%;
+}
+
+.screen {
+  border: black solid 2px;
+  width: 100px;
   margin-top: 6px;
+  color: red;
+  font-size: 75px;
 }

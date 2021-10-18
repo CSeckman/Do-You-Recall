@@ -13,6 +13,8 @@ const begButton = document.querySelector('#beginnerBtn')
 const interButton = document.querySelector('#intermediateBtn')
 const expButton = document.querySelector('#expertBtn')
 const begScreen = document.querySelector('#beginnerScreen')
+const interScreen = document.querySelector('#intermediateScreen')
+const expScreen = document.querySelector('#expertScreen')
 
 /*----------------------------- Event Listeners -----------------------------*/
 begButton.addEventListener('click', startGame)
@@ -43,4 +45,22 @@ function getRandomArray() {
     return (Math.floor(Math.random() * 10))
   })
   console.log(randomArray)
+  renderNums(randomArray)
+}
+
+function renderNums (randomArray) {
+  let screenToUpdate
+  if (randomArray.length === 5) {
+    screenToUpdate = begScreen
+  } else if (randomArray.length === 10) {
+    screenToUpdate = interScreen
+  } else if (randomArray.length === 15) {
+    screenToUpdate = expScreen
+  }
+  randomArray.forEach((num, idx) => {
+    setTimeout(()=> {
+      screenToUpdate.innerText = num
+      console.log(num)
+    }, (idx * 1000))
+  })
 }
