@@ -10,6 +10,7 @@ let startArray
 let randomArrayLength
 let playerGuess
 let randomArray
+let screenToUpdate
 /*------------------------ Cached Element References ------------------------*/
 const begButton = document.querySelector('#beginnerBtn')
 const interButton = document.querySelector('#intermediateBtn')
@@ -43,14 +44,17 @@ submitBtn.forEach(btn => {
 function startGame(evt) {
   console.log('working click')
   if (evt.target.id === 'beginnerBtn') {
+    document.getElementById('beginnerScreen').className = "screenOfNums"
     startArray = beginnerArray
     console.log(startArray)
   }
   if (evt.target.id === 'intermediateBtn') {
+    document.getElementById('intermediateScreen').className = "screenOfNums"
     startArray = intermediateArray
     console.log(startArray)
   }
   if (evt.target.id === 'expertBtn') {
+    document.getElementById('expertScreen').className = "screenOfNums"
     startArray = expertArray
     console.log(startArray)
   }
@@ -66,7 +70,6 @@ function getRandomArray() {
 }
 
 function renderNums (randomArray) {
-  let screenToUpdate
   randomArrayLength = randomArray.length
   if (randomArrayLength === 5) {
     screenToUpdate = begScreen
@@ -75,6 +78,7 @@ function renderNums (randomArray) {
   } else if (randomArrayLength) {
     screenToUpdate = expScreen
   }
+  
   randomArray.forEach((num, idx) => {
     setTimeout(()=> {
       screenToUpdate.innerText = num
@@ -88,22 +92,25 @@ function renderInput() {
   if (randomArrayLength === 5) {
     begButton.setAttribute('hidden', true)
     setTimeout(() => {
+      screenToUpdate.innerText = ''
       begInput.removeAttribute('hidden')
-      begScreen.innerHTML = "<img src= '/images/numbers pic.jpeg\' width=\'100%\'>";
+      document.getElementById('beginnerScreen').className = "screen"
     }, 5000)
   }
   if (randomArrayLength === 10) {
     interButton.setAttribute('hidden', true)
     setTimeout(() => {
+      screenToUpdate.innerText = ''
       interInput.removeAttribute('hidden')
-      interScreen.innerHTML = "<img src= '/images/numbers pic.jpeg\' width=\'100%\'>";
+      document.getElementById('intermediateScreen').className = "screen"
     }, 10000)
   }
   if (randomArrayLength === 15) {
     expButton.setAttribute('hidden', true)
     setTimeout(() => {
+      screenToUpdate.innerText = ''
       expInput.removeAttribute('hidden')
-      expScreen.innerHTML = "<img src= '/images/numbers pic.jpeg\' width=\'100%\'>";
+      document.getElementById('expertScreen').className= "screen"
     }, 15000)
   }
 }
@@ -121,5 +128,5 @@ function isWinner() {
 }
 
 function renderWinner() {
-  
+
 }

@@ -66,7 +66,7 @@ h1 {
   height: 250px;
   margin-top: 6px;
   color: red;
-  font-size: 75px;
+  font-size: rem;
 }
 
 .input {
@@ -79,5 +79,5 @@ h1 {
 }
 
 tryAgainScreen {
-  
+
 }
