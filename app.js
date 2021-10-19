@@ -119,3 +119,7 @@ function isWinner() {
   let randomString = randomArray.join('')
   randomString === playerGuess ? alert ("YOU WIN!") : alert ("TRY AGAIN!")
 }
+
+function renderWinner() {
+  
+}

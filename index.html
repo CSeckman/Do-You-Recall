@@ -23,64 +23,48 @@
 <body>
   <header>Do You Recall?</header>
   <h1>How to Play: First a player select their difficulty. Time to play! After a series of numbers appears in the modal, the player must recall the numbers they saw, in the order they were shown (no spaces, commas or extras - example "12345") Recall the number series and you win! 
+
   <div class="allCards">
+
     <div class="beginnerCard card" style="width: 25%;">
-      <div class="screen" id="beginnerScreen">
-        <img src="/images/numbers pic.jpeg" class="cardImg" id="beginnerCardImage">
+      <div class="screen flex-container" id="beginnerScreen">
       </div>
-      <div class="card-body">
         <h5 class="card-title">Beginner</h5>
         <p class="card-text">5 Numbers</p>
         <a href="#" class="btn btn-primary" id='beginnerBtn'>Click to Play</a>
         <form class="begForm" hidden> 
-          <div>
             <label for="example">Do you recall? </label>
-            <input id="example" type="text" name="text" placeholder="example ''12345''"></input>
-          </div>
-          <div>
+            <input class="input" placeholder="example ''12345''"></input>
             <input class="submitBtn" type="submit" value="Submit">
-          </div>
         </form>
-      </div>
     </div>
+
     <div class="intermediateCard card" style="width: 25%;">
-      <div class="screen" id="intermediateScreen">
-        <img src="/images/numbers pic.jpeg" class="cardImg" id="intermediateCardImage" alt="...">
+      <div class="screen flex-container" id="intermediateScreen">
       </div>
-      <div class="card-body">
         <h5 class="card-title">Intermediate</h5>
         <p class="card-text">10 Numbers</p>
         <a href="#" class="btn btn-primary" id='intermediateBtn'>Click to Play</a>
-        <form class="interForm" hidden> 
-          <div>
+        <form class="interForm" hidden>
             <label for="example">Do you recall? </label>
-            <input id="example" type="text" name="text" placeholder="example ''12345''"></input>
-          </div>
-          <div>
+            <input class="input" placeholder="example ''12345''"></input>
             <input class="submitBtn" type="submit" value="Submit">
-          </div>
         </form>
-      </div>
     </div>
+
     <div class="expertCard card" style="width: 25%;">
-      <div class="screen" id="expertScreen"> 
-        <img src="/images/numbers pic.jpeg" class="cardImg" id="expertCardImage" alt="...">
+      <div class="screen flex-container" id="expertScreen"> 
       </div>
-      <div class="card-body">
         <h5 class="card-title">Expert</h5>
         <p class="card-text">15 Numbers</p>
         <a href="#" class="btn btn-primary" id='expertBtn'>Click to Play</a>
         <form class="expForm" hidden> 
-          <div>
             <label for="example">Do you recall? </label>
-            <input id="example" type="text" name="text" placeholder="example ''12345''"></input>
-          </div>
-          <div>
+            <input placeholder="example ''12345''"></input>
             <input class="submitBtn" type="submit" value="Submit">
-          </div>
         </form>
-      </div>
     </div>
+
   </div>
 </body>
 </html>
