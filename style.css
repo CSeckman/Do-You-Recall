@@ -18,16 +18,16 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 	width: 100%;
   margin-top: 25px;
 }
 
 .card {
-  width: 50px;
-  margin: 0 20px;
+  width: 33%;
+  max-height: 100%;
   align-items: center;
-  
+  margin: 0px 20px;
 }
 
 .card-title {
@@ -43,15 +43,12 @@ h1 {
   font-size: 15px;
 }
 
-.cardImg {
-  width: 100%;
-  padding: 0px 0px;
-}
-
 .screen {
+  position: relative;
+  width: 90%;
+  height: 0;
+  padding-bottom: 90%;
   border: black solid 2px;
-  width: 80%;
-  height: 250px;
   margin-top: 6px;
   color: red;
   font-size: 75px;
@@ -61,12 +58,14 @@ h1 {
 
 
 .screenOfNums {
+  position: relative;
+  width: 90%;
+  height: 0;
+  padding-bottom: 90%;
   border: black solid 2px;
-  width: 80%;
-  height: 250px;
   margin-top: 6px;
   color: red;
-  font-size: rem;
+  font-size: 20vmin;
 }
 
 .input {
@@ -75,9 +74,27 @@ h1 {
 }
 
 .winningScreen {
-
+  position: relative;
+  width: 90%;
+  height: 0;
+  padding-bottom: 90%;
+  border: black solid 2px;
+  margin-top: 6px;
+  color: red;
+  font-size: 75px;
+  background-image: url('https://i.ibb.co/BZyRVd6/Screen-Shot-2021-10-19-at-3-00-03-PM.png');
+  background-size: cover;
 }
 
-tryAgainScreen {
-
+.tryAgainScreen {
+  position: relative;
+  width: 90%;
+  height: 0;
+  padding-bottom: 90%;
+  border: black solid 2px;
+  margin-top: 6px;
+  color: red;
+  font-size: 75px;
+  background-image: url('https://i.ibb.co/16F3kds/Screen-Shot-2021-10-19-at-3-00-48-PM.png');
+  background-size: cover;
 }

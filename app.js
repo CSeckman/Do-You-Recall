@@ -22,7 +22,7 @@ const begInput = document.querySelector('.begForm')
 const interInput = document.querySelector('.interForm')
 const expInput = document.querySelector('.expForm')
 const submitBtn = document.querySelectorAll('.submitBtn')
-const inputVal = document.getElementById('example')
+const inputVal = document.querySelector('.input')
 /*----------------------------- Event Listeners -----------------------------*/
 begButton.addEventListener('click', startGame)
 interButton.addEventListener('click', startGame)
@@ -119,12 +119,13 @@ function handleInput () {
   console.log('click')
   playerGuess = inputVal.value
   console.log(playerGuess)
+
   isWinner()
 }
 
 function isWinner() {
   let randomString = randomArray.join('')
-  randomString === playerGuess ? alert ("YOU WIN!") : alert ("TRY AGAIN!")
+  
 }
 
 function renderWinner() {
