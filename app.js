@@ -9,7 +9,6 @@ const expertArray = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 let startArray
 let randomArrayLength
 let playerGuess
-let playerArray
 let randomArray
 /*------------------------ Cached Element References ------------------------*/
 const begButton = document.querySelector('#beginnerBtn')
@@ -111,12 +110,12 @@ function renderInput() {
 
 function handleInput () {
   console.log('click')
-  playerArray = parseInt(inputVal.value)
-  console.log(playerArray)
-  // console.log(randomArray.join())
-  // isWinner()
+  playerGuess = inputVal.value
+  console.log(playerGuess)
+  isWinner()
 }
 
-// function isWinner() {
-  
-// }
+function isWinner() {
+  let randomString = randomArray.join('')
+  randomString === playerGuess ? alert ("YOU WIN!") : alert ("TRY AGAIN!")
+}
