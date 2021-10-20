@@ -21,48 +21,50 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>Do You Recall?</header>
-  <h1 class="instructions">How to Play: First a player select their difficulty. Time to play! After a series of numbers appears in the modal, the player must recall the numbers they saw, in the order they were shown (no spaces, commas or extras - example "12345") Recall the number series and you win! 
+  <div id= "mainDiv">
+    <header>Do You Recall?</header>
+    <h1 class="instructions">How to Play: First a player select their difficulty. Time to play! After a series of numbers appears in the modal, the player must recall the numbers they saw, in the order they were shown (no spaces, commas or extras - example "12345") Recall the number series and you win! </h1>
 
-  <div class="allCards">
+    <div class="allCards">
 
-    <div class="beginnerCard border-white card" style="width: 25%;">
-      <h5 class="card-title">Beginner</h5>
-      <div class="screen" id="beginnerScreen">
-      </div>
-        <p class="card-text">5 Numbers</p>
-        <a href="#" class="btn btn-primary" id='beginnerBtn'>Click to Play</a>
-        <div id= "begForm" hidden>
-          <label>Do you recall? </label>
-          <input id="begInput" class="inputBar placeholder="example ''12345''" > 
-          <input class="submitBtn" type="submit" value="Submit">
+      <div class="beginnerCard border-white card" style="width: 25%;">
+        <h5 class="card-title">Beginner</h5>
+        <div class="screen" id="beginnerScreen">
         </div>
-    </div>
-
-    <div class="intermediateCard border-white card" style="width: 25%;">
-      <h5 class="card-title">Intermediate</h5>
-      <div class="screen" id="intermediateScreen">
+          <p class="card-text">5 Numbers</p>
+          <a href="#" class="btn btn-primary" id='beginnerBtn'>Click to Play</a>
+          <div class="form" id= "begForm" hidden>
+            <label>Do you recall? </label>
+            <input id="begInput" class="inputBar placeholder="example ''12345''" > 
+            <input class="submitBtn" type="submit" value="Submit">
+          </div>
       </div>
-        <p class="card-text">10 Numbers</p>
-        <a href="#" class="btn btn-primary" id='intermediateBtn'>Click to Play</a>
-        <div id= "interForm" hidden>
-          <label>Do you recall? </label>
-          <input id="interInput" class="inputBar placeholder="example ''12345''" > 
-          <input class="submitBtn" type="submit" value="Submit">
-        </div>
-    </div>
 
-    <div class="expertCard border-white card" style="width: 25%;">
-      <h5 class="card-title">Expert</h5>    
-      <div class="screen" id="expertScreen"> 
-      </div>
-        <p class="card-text">15 Numbers</p>
-        <a href="#" class="btn btn-primary" id='expertBtn'>Click to Play</a>
-        <div id="expForm" hidden>
-          <label>Do you recall? </label>
-          <input id="expInput" class="inputBar placeholder="example ''12345''" > 
-          <input class="submitBtn" type="submit" value="Submit">
+      <div class="intermediateCard border-white card" style="width: 25%;">
+        <h5 class="card-title">Intermediate</h5>
+        <div class="screen" id="intermediateScreen">
         </div>
+          <p class="card-text">10 Numbers</p>
+          <a href="#" class="btn btn-primary" id='intermediateBtn'>Click to Play</a>
+          <div class="form" id= "interForm" hidden>
+            <label>Do you recall? </label>
+            <input id="interInput" class="inputBar placeholder="example ''12345''" > 
+            <input class="submitBtn" type="submit" value="Submit">
+          </div>
+      </div>
+
+      <div class="expertCard border-white card" style="width: 25%;">
+        <h5 class="card-title">Expert</h5>    
+        <div class="screen" id="expertScreen"> 
+        </div>
+          <p class="card-text">15 Numbers</p>
+          <a href="#" class="btn btn-primary" id='expertBtn'>Click to Play</a>
+          <div class="form" id="expForm" hidden>
+            <label>Do you recall? </label>
+            <input id="expInput" class="inputBar placeholder="example ''12345''" > 
+            <input class="submitBtn" type="submit" value="Submit">
+          </div>
+      </div>
     </div>
   </div>
 </body>
