@@ -1,6 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 
 
+let inputVal 
 
 /*---------------------------- Variables (state) ----------------------------*/
 const beginnerArray = [1,1,1,1,1]
@@ -18,17 +19,16 @@ const expButton = document.querySelector('#expertBtn')
 const begScreen = document.querySelector('#beginnerScreen')
 const interScreen = document.querySelector('#intermediateScreen')
 const expScreen = document.querySelector('#expertScreen')
-const begInput = document.querySelector('.begForm')
-const interInput = document.querySelector('.interForm')
-const expInput = document.querySelector('.expForm')
+const begInput = document.querySelector('#begInput')
+const interInput = document.querySelector('#interInput')
+const expInput = document.querySelector('#expInput')
 const submitBtn = document.querySelectorAll('.submitBtn')
-const inputVal = document.querySelector('.input')
 /*----------------------------- Event Listeners -----------------------------*/
 begButton.addEventListener('click', startGame)
 interButton.addEventListener('click', startGame)
 expButton.addEventListener('click', startGame)
 submitBtn.forEach(btn => {
-  btn.addEventListener('click', handleInput)
+  btn.addEventListener('click', checkForWinner)
 })
 // interInput.addEventListener('click', handleInput)
 // expInput.addEventListener('click', handleInput)
@@ -52,6 +52,7 @@ function startGame(evt) {
     document.getElementById('intermediateScreen').className = "screenOfNums"
     startArray = intermediateArray
     console.log(startArray)
+
   }
   if (evt.target.id === 'expertBtn') {
     document.getElementById('expertScreen').className = "screenOfNums"
@@ -85,49 +86,48 @@ function renderNums (randomArray) {
       console.log(num)
     }, (idx * 1000))
   })
-  renderInput()
+  renderForms()
 }
 
-function renderInput() {
+function renderForms() {
   if (randomArrayLength === 5) {
     begButton.setAttribute('hidden', true)
+    inputVal = begInput
     setTimeout(() => {
       screenToUpdate.innerText = ''
-      begInput.removeAttribute('hidden')
-      document.getElementById('beginnerScreen').className = "screen"
+      screenToUpdate.className = 'screen'
+      document.getElementById('begForm').removeAttribute('hidden')
     }, 5000)
   }
   if (randomArrayLength === 10) {
     interButton.setAttribute('hidden', true)
+    inputVal = interInput
     setTimeout(() => {
       screenToUpdate.innerText = ''
-      interInput.removeAttribute('hidden')
-      document.getElementById('intermediateScreen').className = "screen"
+      screenToUpdate.className = 'screen'
+      document.getElementById('interForm').removeAttribute('hidden')
     }, 10000)
   }
   if (randomArrayLength === 15) {
     expButton.setAttribute('hidden', true)
+    inputVal = expInput
     setTimeout(() => {
       screenToUpdate.innerText = ''
-      expInput.removeAttribute('hidden')
-      document.getElementById('expertScreen').className= "screen"
+      screenToUpdate.className = 'screen'
+      document.getElementById('expForm').removeAttribute('hidden')
     }, 15000)
   }
 }
 
-function handleInput () {
-  console.log('click')
-  playerGuess = inputVal.value
-  console.log(playerGuess)
-
-  isWinner()
-}
-
-function isWinner() {
+function checkForWinner () {
+  console.log("taco")
+  console.log(inputVal.value)
   let randomString = randomArray.join('')
+  console.log(randomString)
   
-}
-
-function renderWinner() {
-
+  if (inputVal.value === randomString) {
+    screenToUpdate.className = "winningScreen"
+  } else if (inputVal.value !== randomString) {
+    screenToUpdate.className = "tryAgainScreen"
+  }
 }
