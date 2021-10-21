@@ -27,20 +27,20 @@ function startGame(evt) {
   document.querySelector('.modal-container').removeAttribute('hidden', true)
   if (evt.target.id === 'beginner-btn') {
     document.getElementById('card-title').innerText="Beginner"
-    document.getElementById('number-of-cards').innerText="5 Numbers"
+    document.getElementById('number-of-cards').innerText="5 Numbers - Do You Recall?"
     startArray = beginnerArray
     console.log(startArray)
   }
   if (evt.target.id === 'intermediate-btn') {
     document.getElementById('card-title').innerText="Intermediate"
-    document.getElementById('number-of-cards').innerText="7 Numbers"
+    document.getElementById('number-of-cards').innerText="7 Numbers - Do You Recall?"
     startArray = intermediateArray
     console.log(startArray)
 
   }
   if (evt.target.id === 'expert-btn') {
     document.getElementById('card-title').innerText="Expert"
-    document.getElementById('number-of-cards').innerText="10 Numbers"
+    document.getElementById('number-of-cards').innerText="10 Numbers - Do You Recall?"
     startArray = expertArray
     console.log(startArray)
   }
@@ -108,4 +108,6 @@ function closeModal() {
   
   document.querySelector('.modal-container').setAttribute('hidden', true)
   document.getElementById('screen').className = 'screen-of-nums'
+  document.querySelector('#input-form').setAttribute('hidden', true)
+  inputVal.value = ""
 }
