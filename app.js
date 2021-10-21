@@ -105,5 +105,7 @@ function checkForWinner() {
 }
 
 function closeModal() {
+  
   document.querySelector('.modal-container').setAttribute('hidden', true)
+  document.getElementById('screen').className = 'screen-of-nums'
 }
