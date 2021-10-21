@@ -64,7 +64,10 @@ function renderNums (randomArray) {
   randomArray.forEach((num, idx) => {
     setTimeout(()=> {
       screenOfNums.innerText = num
-    }, (idx * 1000))
+      setTimeout(()=> {
+        screenOfNums.innerText = ""
+      }, (1000))
+    }, (idx * 1100))
   })
   renderForms()
 }
@@ -76,21 +79,21 @@ function renderForms() {
       screenOfNums.innerText = ''
       screenOfNums.className = 'img'
       document.getElementById('input-form').removeAttribute('hidden')
-    }, 5000)
+    }, 5500)
   }
   if (randomArrayLength === 7) {
     setTimeout(() => {
       screenOfNums.innerText = ''
       screenOfNums.className = 'img'
       document.getElementById('input-form').removeAttribute('hidden')
-    }, 7000)
+    }, 7500)
   }
   if (randomArrayLength === 10) {
     setTimeout(() => {
       screenOfNums.innerText = ''
       screenOfNums.className = 'img'
       document.getElementById('input-form').removeAttribute('hidden')
-    }, 10000)
+    }, 11000)
   }
 }
 
