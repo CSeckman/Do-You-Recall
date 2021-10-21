@@ -10,14 +10,14 @@ header {
 h1 {
   text-align: center;
   font-size: 2vmin;
-  margin: 5px 5% 5px 5%;
+  margin: 15px 5% 25px 5%;
 }
 
 :root {
   --animate-duration: 2s;
 }
 
-#mainDiv {
+.main-div {
   background-color: white;
   border: solid 3px black;
   border-radius: 10px;
@@ -25,7 +25,8 @@ h1 {
   padding: 0px;
 }
 
-.allCards {
+.all-cards {
+  background-color: white;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -35,86 +36,101 @@ h1 {
   padding: 0 0 5% 0;
 }
 
-.card {
-  width: 33%;
-  align-items: center;
-  margin: 0px 20px;
-}
-
-.card-title {
-  font-size: 3vmin;
-  text-align: center;
-}
-
-.card-text {
-  margin-top: 10px;
-  font-size: 3vmin;
-}
-
-.btn {
-  width: 70%;
-  font-size: 3vmin;
-  margin: 0 10% 0 10%;
-}
-
-.form {
+.img {
   display: flex;
-  justify-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.inputBar {
-  width: 95%;
-  margin: 5px;
-}
-
-.screen {
-  border-radius: 5px;
-  position: relative;
-  width: 90%;
-  height: 0;
-  padding-bottom: 90%;
-  border: black solid 2px;
-  margin-top: 6px;
-  background-image: url(/images/numbers\ pic.jpeg);
+  margin: 2px;
+  background-image: url("/images/numbers_pic.jpg");
   background-size: cover;
-}
-
-
-.screenOfNums {
-  border-radius: 5px;
   position: relative;
   width: 90%;
   height: 0;
   padding-bottom: 90%;
+}
+
+p {
+  font-size: 10px;
+}
+
+.card {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+}
+
+.cards-div {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+.btn {
+  margin-bottom: 10px;
+}
+
+.modal-container  {
+  background-color: rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+
+.screen-of-nums {
+  border-radius: 5px;
+  position: relative;
+  width: 70%;
+  height: 0;
+  padding-bottom: 70%;
   border: black solid 2px;
   margin-top: 6px;
   color: red;
   font-size: 20vmin;
 }
 
-
-.winningScreen {
-  border-radius: 5px;
-  position: relative;
-  width: 90%;
-  height: 0;
-  padding-bottom: 90%;
-  border: black solid 2px;
-  margin-top: 6px;
-  background-image: url('https://i.ibb.co/BZyRVd6/Screen-Shot-2021-10-19-at-3-00-03-PM.png');
-  background-size: cover;
+.modal-card {
+  background-color: white;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 20%;
+  justify-content: space-around;
+  margin: auto;
+  padding: 0 0 5% 0;
 }
 
-.tryAgainScreen {
+.you-win {
+  background-image: url("/images/you_win.png");
+  background-size: cover;
   border-radius: 5px;
   position: relative;
-  width: 90%;
+  width: 70%;
   height: 0;
-  padding-bottom: 90%;
+  padding-bottom: 70%;
   border: black solid 2px;
   margin-top: 6px;
-  background-image: url('https://i.ibb.co/16F3kds/Screen-Shot-2021-10-19-at-3-00-48-PM.png');
+  color: red;
+  font-size: 20vmin;
+}
+.try-again {
+  background-image: url("/images/try_again.png");
   background-size: cover;
+  border-radius: 5px;
+  position: relative;
+  width: 70%;
+  height: 0;
+  padding-bottom: 70%;
+  border: black solid 2px;
+  margin-top: 6px;
+  color: red;
+  font-size: 20vmin;
 }
