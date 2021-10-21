@@ -1,11 +1,18 @@
+/*-------------------------------- Constants --------------------------------*/
 
 const beginnerArray = [1,1,1,1,1]
 const intermediateArray = [1,1,1,1,1,1,1]
 const expertArray = [1,1,1,1,1,1,1,1,1,1]
+
+
+/*---------------------------- Variables (state) ----------------------------*/
+
 let startArray
 let randomArrayLength
 let randomArray
 let inputVal 
+
+/*------------------------ Cached Element References ------------------------*/
 
 const begButton = document.querySelector('#beginner-btn')
 const interButton = document.querySelector('#intermediate-btn')
@@ -15,34 +22,32 @@ const playerInput = document.querySelector('#player-input')
 const submitBtn = document.querySelector('.submit-btn')
 const resetBtn = document.querySelector('.reset-btn')
 
+/*----------------------------- Event Listeners -----------------------------*/
+
 begButton.addEventListener('click', startGame)
 interButton.addEventListener('click', startGame)
 expButton.addEventListener('click', startGame)
 submitBtn.addEventListener('click', checkForWinner)
 resetBtn.addEventListener('click', closeModal)
 
+/*-------------------------------- Functions --------------------------------*/
 
 function startGame(evt) {
-  console.log('hi')
   document.querySelector('.modal-container').removeAttribute('hidden', true)
   if (evt.target.id === 'beginner-btn') {
     document.getElementById('card-title').innerText="Beginner"
     document.getElementById('number-of-cards').innerText="5 Numbers - Do You Recall?"
     startArray = beginnerArray
-    console.log(startArray)
   }
   if (evt.target.id === 'intermediate-btn') {
     document.getElementById('card-title').innerText="Intermediate"
     document.getElementById('number-of-cards').innerText="7 Numbers - Do You Recall?"
     startArray = intermediateArray
-    console.log(startArray)
-
   }
   if (evt.target.id === 'expert-btn') {
     document.getElementById('card-title').innerText="Expert"
     document.getElementById('number-of-cards').innerText="10 Numbers - Do You Recall?"
     startArray = expertArray
-    console.log(startArray)
   }
   getRandomArray()
 }
@@ -51,7 +56,6 @@ function getRandomArray() {
   randomArray = startArray.map(function (num) {
     return (Math.floor(Math.random() * 10))
   })
-  console.log(randomArray)
   renderNums(randomArray)
 }
 
@@ -60,7 +64,6 @@ function renderNums (randomArray) {
   randomArray.forEach((num, idx) => {
     setTimeout(()=> {
       screenOfNums.innerText = num
-      console.log(num)
     }, (idx * 1000))
   })
   renderForms()
@@ -92,11 +95,7 @@ function renderForms() {
 }
 
 function checkForWinner() {
-  console.log("taco")
-  console.log(inputVal.value)
   let randomString = randomArray.join('')
-  console.log(randomString)
-  
   if (inputVal.value === randomString) {
     screenOfNums.className = "you-win"
   } else {
@@ -105,7 +104,6 @@ function checkForWinner() {
 }
 
 function closeModal() {
-  
   document.querySelector('.modal-container').setAttribute('hidden', true)
   document.getElementById('screen').className = 'screen-of-nums'
   document.querySelector('#input-form').setAttribute('hidden', true)
