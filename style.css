@@ -130,6 +130,8 @@ p {
   width: 70%;
   height: 0;
   padding-bottom: 70%;
+  max-width: 600px;
+  max-height: 600px;
 }
 
 .you-win {
