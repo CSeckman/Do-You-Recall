@@ -213,6 +213,9 @@ p {
   .btn {
     margin: 5px;
   }
+  .screen-of-nums {
+    font-size: 120px;
+  }
 }
 
 @media (min-width: 600px) {
